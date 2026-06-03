@@ -5,22 +5,22 @@ public class Endereco {
     private String cep;
     private String logradouro;
     private String cidade;
-    private String estado;
+    private String uf;
 
-    public Endereco(String cep, String logradouro, String cidade, String estado) {
+    public Endereco(String cep, String logradouro, String cidade, String uf) {
         if (!cep.matches("\\d{2}\\.\\d{3}-\\d{3}")) {
-            throw new IllegalArgumentException("CEP inválido! Use o formato: dd.ddd-ddd");
+            throw new IllegalArgumentException("CEP invalido! Use o formato: dd.ddd-ddd");
         }
         this.cep = cep;
         this.logradouro = logradouro;
         this.cidade = cidade;
-        this.estado = estado;
+        this.uf = uf;
     }
 
     public String getCep() { return cep; }
     public String getLogradouro() { return logradouro; }
     public String getCidade() { return cidade; }
-    public String getEstado() { return estado; }
+    public String getUf() { return uf; }
 
     public boolean equals(Object obj) {
         if (this == obj) return true;
@@ -30,6 +30,6 @@ public class Endereco {
     }
 
     public String toString() {
-        return logradouro + ", " + cidade + " - " + estado + " (CEP: " + cep + ")";
+        return logradouro + ", " + cidade + " - " + uf + " (CEP: " + cep + ")";
     }
 }
